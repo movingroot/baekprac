@@ -1,0 +1,21 @@
+using System;
+
+namespace baek
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int firstInput = int.Parse(Console.ReadLine());
+      
+      for (int i = 1; i <= firstInput; i++)
+      {
+        string[] T = Console.ReadLine().Split();
+        int a = int.Parse(T[0]);
+        int b = int.Parse(T[1]);
+        
+        Console.WriteLine("Case #{0}: {1} + {2} = {3}", i, a, b, a+b);
+      }
+    }
+  }
+}
