@@ -1,0 +1,58 @@
+using System;
+
+namespace baek
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string[] input = Console.ReadLing().Split();
+      int x = int.Parse(input[0]);
+      int y = int.Parse(input[1]);
+      int dayCount = 0;
+      
+      for(i = 1; i < x; i++)
+      {
+        if(i == 4 || i == 6 || i == 9 || i == 11)
+        {
+          dayCount += 30;
+        }else if(i == 2)
+        {
+          dayCount += 28;
+        }
+        else
+        {
+          dayCount += 31;
+        }
+        
+        y += dayCount;
+        int decDay = y % 7;
+        
+        switch(decDay)
+        {
+          case 0:
+            Console.WriteLine("SUN");
+            break;
+          case 1:
+            Console.WriteLine("MON");
+            break;
+          case 2:
+            Console.WriteLine("TUE");
+            break;
+          case 3:
+            Console.WriteLine("WED");
+            break;
+          case 4:
+            Console.WriteLine("THU");
+            break;
+          case 5:
+            Console.WriteLine("FRI");
+            break;
+          case 6:
+            Console.WriteLine("SAT");
+            break;
+        }
+      }
+    }
+  }
+}
