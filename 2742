@@ -1,0 +1,23 @@
+using System;
+using System.Text;
+
+namespace baek
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int T = int.Parse(Console.ReadLine());
+      StringBuilder sb = new StringBuilder();
+
+      for(int i = T; i > 0; i--)
+      {
+        sb.AppendLine(i.ToString());
+      }
+
+      Console.WriteLine(sb);
+    }
+  }
+}
+
+
