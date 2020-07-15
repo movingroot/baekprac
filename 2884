@@ -1,0 +1,30 @@
+using System;
+
+namespace baek
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+       string[] input = Console.ReadLine().Split();
+       int h = int.Parse(input[0]);
+       int m = int.Parse(input[1]);
+
+       if(m >= 45)
+       {
+          Console.WriteLine("{0} {1}", h, m-45);
+       }
+       else
+       {
+          if(h == 0)
+          {
+            Console.WriteLine("23 {0}", m + 15);
+          }
+          else
+          {
+            Console.WriteLine("{0} {1}", h -1, m + 15);
+          }
+      }
+    }
+  }
+}
