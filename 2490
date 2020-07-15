@@ -1,0 +1,38 @@
+using System;
+
+namespace baek
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {           
+            for(int i = 0; i < 3; i++)
+            {
+                string[] play = Console.ReadLine().Split();
+                int a = int.Parse(play[0]);
+                int b = int.Parse(play[1]);
+                int c = int.Parse(play[2]);
+                int d = int.Parse(play[3]);
+
+                int result = a + b + c + d;
+                if(result == 1)
+                {
+                    Console.WriteLine("C");
+                }else if(result == 2)
+                {
+                    Console.WriteLine("B");
+                }else if(result == 3)
+                {
+                    Console.WriteLine("A");
+                }else if(result == 4)
+                {
+                    Console.WriteLine("E");
+                }
+                else
+                {
+                    Console.WriteLine("D");
+                }                
+            }
+        }
+    }
+}
