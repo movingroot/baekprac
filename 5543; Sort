@@ -1,0 +1,22 @@
+namespace baek
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int ham1 = int.Parse(Console.ReadLine());
+            int ham2 = int.Parse(Console.ReadLine());
+            int ham3 = int.Parse(Console.ReadLine());
+            int bev1 = int.Parse(Console.ReadLine());
+            int bev2 = int.Parse(Console.ReadLine());
+
+            int[] hamHam = new int[] { ham1, ham2, ham3 };
+            int[] bevBev = new int[] { bev1, bev2 };
+
+            Array.Sort(hamHam);
+            Array.Sort(bevBev);
+
+            Console.WriteLine(hamHam[0] + bevBev[0] - 50);
+        }
+    }
+}
