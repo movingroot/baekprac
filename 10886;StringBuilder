@@ -1,0 +1,36 @@
+using System;
+using System.Text;
+
+namespace baek
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int input = int.Parse(Console.ReadLine());
+            StringBuilder sb1 = new StringBuilder();
+            StringBuilder sb2 = new StringBuilder();
+
+            for(int i=1; i<=input; i++)
+            {
+                if(Console.ReadLine() == "0")
+                {
+                    sb1.Append("0");
+                }
+                else
+                {
+                    sb2.Append("1");
+                }                
+            }
+
+            if(sb1.Length < sb2.Length)
+            {
+                Console.WriteLine("Junhee is cute!");
+            }
+            else
+            {
+                Console.WriteLine("Junhee is not cute!");
+            }
+        }
+    }
+}
