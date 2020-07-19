@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var firstInput = Console.ReadLine().Split();
+            int n = int.Parse(firstInput[0]);
+            int m = int.Parse(firstInput[1]);
+
+            var noHear = new List<string>();
+            var noSeen = new List<string>();
+
+            //StringBuilder sbH = new StringBuilder();
+            //StringBuilder sbS = new StringBuilder();
+
+            for(int l=0; l<n; l++)
+            {
+                string ip = Console.ReadLine();
+                noHear.Add(ip);
+                //sbH.Append(ip + ";");
+            }
+            Console.WriteLine("");
+            for(int l=0; l<m; l++)
+            {
+                string ip2 = Console.ReadLine();
+                noSeen.Add(ip2);
+                //sbS.Append(ip2 + ";");
+            }
+            var nor = noHear.Select(i => i.ToString()).Intersect(noSeen).OrderBy(str => str[0]);
+            
+            Console.WriteLine(nor.Count());
+            foreach(string value in nor)
+            {
+                Console.WriteLine(value);
+            }
+            //string[] arrayH = sbH.ToString().Split(";");
+            //string[] arrayS = sbS.ToString().Split(";");
+            //List<string> noHearNorSeen = new List<string>();
+            //noHearNorSeen.AddRange(arrayH.Intersect(arrayS));
+            
+            //Console.WriteLine(noHearNorSeen.Count - 1);
+            //noHearNorSeen.Sort();
+            //foreach (string value in noHearNorSeen)
+            //{
+            //    Console.WriteLine(value);
+            //}
+        }
+    }
+}
