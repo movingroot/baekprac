@@ -1,0 +1,33 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int testCaseNum = int.Parse(Console.ReadLine());
+        int rNum = 0;
+        int eNum = 0;
+        int cNum = 0;
+
+        for (int i=0; i<testCaseNum; i++)
+        {
+            string[] costPer = Console.ReadLine().Split(" ");
+
+            rNum = int.Parse(costPer[0]);
+            eNum = int.Parse(costPer[1]);
+            cNum = int.Parse(costPer[2]);
+
+            if (eNum > rNum + cNum)
+            {
+                Console.WriteLine("advertise");
+            } else if (eNum == rNum + cNum)
+            {
+                Console.WriteLine("does not matter");
+            }
+            else
+            {
+                Console.WriteLine("do not advertise");
+            }
+        }
+    }
+}
