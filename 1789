@@ -1,0 +1,10 @@
+using System;
+
+public class Program {
+    public static void Main() {
+            long s = long.Parse(Console.ReadLine());
+
+            if (s == 1 || s == 2) Console.WriteLine(1);
+            else Console.WriteLine(Math.Truncate((Math.Sqrt((8*s)+1)-1)/2));
+    }
+}
