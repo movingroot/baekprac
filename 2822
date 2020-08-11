@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+
+namespace baek
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] score = new int[8];
+            int[] scoreSpare = new int[8];
+
+            for (int i=0; i<8; i++)
+            {
+                int perScore = int.Parse(Console.ReadLine());
+                score[i] = perScore;
+                scoreSpare[i] = perScore;
+            }
+
+            var numbers = new List<int>();
+            Array.Sort(score);
+
+            for (int j=0; j<8; j++)
+            {
+                if (scoreSpare[j].Equals(score[3]) || scoreSpare[j].Equals(score[4]) || scoreSpare[j].Equals(score[5]) || scoreSpare[j].Equals(score[6]) || scoreSpare[j].Equals(score[7]))
+                    numbers.Add(j+1);
+            }
+
+            Console.WriteLine(score[3]+ score[4]+ score[5]+ score[6]+ score[7]);
+            Console.WriteLine(String.Join(" ", numbers));
+        }
+    }
+}
