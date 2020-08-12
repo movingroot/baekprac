@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main() 
+    {
+        // while loop 이용한 해결법. whlie은 위험성이 있기 때문에 선호되지 않음?
+        
+        int score = 0;     // 점수
+        var mushs = new List<int>();     // 버섯 점수 list
+
+        while (true)
+        {
+            int mush = int.Parse(Console.ReadLine());
+            score += mush;
+            mushs.Add(mush);     // 버섯을 먹을 때마다 버섯 점수를 mushs에 넣음
+
+            if ( score >= 100) break;     // 마지막으로 먹은 버섯에 의해 점수가 100 이상일 시 while loop break
+            else if (mushs.Count == 10) break;     // 10개의 버섯을 먹었을 시 최대 한도이므로 while loop break
+        }
+
+        if (score<100 || score - 100 <= 100 - (score - mushs[mushs.Count - 1]))     // 100점 이하거나(10개 먹고도), 총점이 100에 가까운 경우
+            Console.WriteLine(score);
+        else Console.WriteLine(score - mushs[mushs.Count - 1]);     // 마지막으로 먹은 버섯 뺀 값이 100에 가까운 경우
+    }
+}
