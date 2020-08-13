@@ -1,0 +1,30 @@
+using System;
+
+namespace baek
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string input = Console.ReadLine();
+            int e = int.Parse(input.Split(" ")[0]);
+            int f = int.Parse(input.Split(" ")[1]);
+            int c = int.Parse(input.Split(" ")[2]);
+            
+            int drank = (e + f) / c;     // 빈병 교환해서 받는 새 병
+            int left = (e + f) % c;     // 새 병으로 교환 시 남은 빈병
+            int count = 0;
+
+            while (drank>0)     // 새 병을 다시 빈 병으로 돌려서 계산하기 위한 루프
+            {
+                count += drank;
+                int tmp = drank;     // left 계산할 때 drank 변경 전의 값을 넣어주기 위함
+                drank = (drank + left) / c;
+                left = (tmp + left) % c;
+                
+            }
+
+            Console.WriteLine(count);
+        }
+    }
+}
