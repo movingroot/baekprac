@@ -6,15 +6,19 @@ public class Program {
         string input = Console.ReadLine();
         int intN = int.Parse(input.Split(" ")[0]);
         int intK = int.Parse(input.Split(" ")[1]);
+        
+        // 2부터 intN까지의 숫자를 가지는 list 생성; array는 생성 후에 index가 고정이기 때문에 아래의 remove 알고리즘을 위해 list 사용
         var twoToN = new List<int>();
-        var removedNum = new List<int>();
-
         for (int i=0; i<intN-1; i++)
         {
             twoToN.Add(i+2); 
             // twoToN[i] = i+2; 는 twoToN list의 index가 설정되어 있지 않기 때문에 사용될 수 없다!
+            // Array는 정의할 때 index를 정하기 때문에 가능함
         }
-
+        
+        // 규칙에 따라 twoToN list에서 제거 후 그 숫자를 removedNum list에 새로 추가.
+        // K번째 지워진 숫자만큼의 개수가 추가되었을 때 for loop break
+        var removedNum = new List<int>();
         for (int i=2; i<=intN; i++)
         {
             for (int j=1; j<=intN/i; j++)
