@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+
+public class Program {
+    public static void Main() {
+        string input = Console.ReadLine();
+        int intN = int.Parse(input.Split(" ")[0]);
+        int intK = int.Parse(input.Split(" ")[1]);
+        var twoToN = new List<int>();
+        var removedNum = new List<int>();
+
+        for (int i=0; i<intN-1; i++)
+        {
+            twoToN.Add(i+2); 
+            // twoToN[i] = i+2; 는 twoToN list의 index가 설정되어 있지 않기 때문에 사용될 수 없다!
+        }
+
+        for (int i=2; i<=intN; i++)
+        {
+            for (int j=1; j<=intN/i; j++)
+            {
+                if (twoToN.Contains(i * j) == true) { twoToN.Remove(i * j); removedNum.Add(i*j); }
+            }
+            if (removedNum.Count == intK) break;
+        }
+
+        Console.WriteLine(removedNum[intK-1]);
+    }
+}
