@@ -11,7 +11,6 @@ namespace baek
             {
                 factorialResult *= i;
             }
-
             Console.WriteLine(factorialResult);
         }
     }
